@@ -3,20 +3,75 @@ Your netid
 
 Copy/Paste results from PercolationStats using PercolationDFS
 
+simulation data for 20 trials
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	4.206
+200	0.591	0.010	57.346
+400	0.590	0.006	623.000
+
+ my computer became too hot.
+
+simulation data for 20 trials
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
-
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.493
+200	0.591	0.010	0.957
+400	0.590	0.006	4.123
+800	0.594	0.004	27.001
+Exception in thread "main" java.lang.StackOverflowError
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:111)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	at PercolationDFS.dfs(PercolationDFS.java:109)
+	
+	
 
 Copy/Paste results from PercolationStats using PercolationBFS
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.502
+200	0.591	0.010	0.926
+400	0.590	0.006	4.364
+800	0.594	0.004	28.695
+1600	0.592	0.002	179.070
 
 
 Copy/Paste results from PercolationStats using PercolationUF 
 with the QuickUWPC UnionFind implementation.
 
-1. How does doubling the grid size affect running time (keeping # trials fixed)
+simulation data for 20 trials
+grid	mean	stddev	time
+100	0.593	0.014	0.425
+200	0.591	0.010	0.582
+400	0.590	0.006	2.385
+800	0.594	0.004	17.320
+1600	0.592	0.002	103.683
 
+
+
+1. How does doubling the grid size affect running time (keeping # trials fixed)
+As the grid sized increased,  timing increased approximatley 5-6 times more.
 
 2. How does doubling the number of trials affect running time.
+Roughly the time seems to double as the trails are doubled.
+
+simulation data for 10 trials
+grid	mean	stddev	time
+100	0.593	0.019	0.388
+200	0.596	0.006	0.514
+400	0.592	0.006	1.264
+800	0.592	0.003	7.377
+1600	0.594	0.002	39.398
 
 
 3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+Time formulae can be approximated as 5.0*1/2*(size/100) = 24*3600*100/5*0.5 = 3456000
