@@ -39,7 +39,7 @@ public class PercolationDFSFast extends PercolationDFS {
 			throw new IndexOutOfBoundsException("index out of bound");
 			
 		}
-		
+		int j = 0;
 		
 	    int[] rowDelta = {-1,1,0,0};
 	    
@@ -52,11 +52,17 @@ public class PercolationDFSFast extends PercolationDFS {
 			Integer nc = colDelta[k] + col;
 			
 			if(inBounds(nr,nc)&& isFull(nr,nc)) {
-				myGrid[row][col] = FULL;  
-				dfs(row,col);
-				break;
+			j=1;
 				
 			}
+        }
+			if(j==1) {
+				myGrid[row][col] = FULL;  
+				dfs(row,col);
+				
+			}
+			
+			
 		/*if((inBounds(row,col)) && isFull(row,col)){
 			myGrid[row][col] = FULL;    //mark it as full
 			dfs(row,col); //check right                   //
@@ -101,5 +107,5 @@ public class PercolationDFSFast extends PercolationDFS {
 		}*/
 		
 	}
-}
+
 }
