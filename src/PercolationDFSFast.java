@@ -56,7 +56,7 @@ public class PercolationDFSFast extends PercolationDFS {
 				
 			}
         }
-			if(j==1) {
+			if(j==1|| row ==0) {
 				myGrid[row][col] = FULL;  
 				dfs(row,col);
 				
